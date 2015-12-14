@@ -22,11 +22,14 @@ brew cask install versions
 
 # communication
 brew cask install chitchat
+brew cask install slack
 brew cask install hipchat
 brew cask install skype
+brew cask install limechat
 
 # fun
 brew cask install steam
+brew cask install minecraft
 brew cask install sonos
 brew cask install spotify
 
@@ -40,10 +43,14 @@ brew cask install webkit-nightly
 brew cask install chromium
 brew cask install torbrowser
 
-# less often
+# tools
+brew cask install bettertouchtool
+brew cask install flux
+brew cask install gpgtools
+
+# other
 brew cask install virtualbox
 brew cask install transmission
 brew cask install transmit
 brew cask install vlc
-brew cask install gpgtools
 brew cask install wireshark
