@@ -57,6 +57,10 @@
 	# a.k.a. ‘delete merged’
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
+	# Update remote and prune remote branches
+	# a.k.a. 'update remote'
+	ur = "!git remote update origin --prune"
+
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
