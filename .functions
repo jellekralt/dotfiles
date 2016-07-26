@@ -234,3 +234,24 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# Kills the process that is blocking a certain port
+# Usage: `killport 3000`
+function killport() {
+	if [ -z "${1}" ]; then
+		echo "ERROR: No port specified.";
+		return 1;
+	fi;
+
+	local port="${1}";
+	local pname=$(lsof -n -i4TCP:${port} | grep LISTEN | awk '{ print $1 }')
+	local pid=$(lsof -n -i4TCP:${port} | grep LISTEN | awk '{ print $2 }')
+
+	if [ -z "${pid}" ]; then
+		echo "ERROR: No process found on port ${port}"
+		return 1;
+	fi;
+
+	kill ${pid}
+	echo "Killed process '${pname}'' with PID '${pid}'"
+}
