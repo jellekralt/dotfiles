@@ -60,6 +60,10 @@
 	# Update remote and prune remote branches
 	# a.k.a. 'update remote'
 	ur = "!git remote update origin --prune"
+	
+	# Set upstream branch
+	# a.k.a. 'set upstream'
+	su = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
 
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
