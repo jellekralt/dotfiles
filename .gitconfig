@@ -60,10 +60,13 @@
 	# Update remote and prune remote branches
 	# a.k.a. 'update remote'
 	ur = "!git remote update origin --prune"
-	
+
 	# Set upstream branch
 	# a.k.a. 'set upstream'
 	su = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
+
+	# Config git user as KPN
+	kpn = "!git config user.email 'jelle.kralt@kpn.com'"
 
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
@@ -103,6 +106,8 @@
 	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
 	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
+	editor = vim
+	autocrlf = input
 
 [color]
 
@@ -153,7 +158,7 @@
 	# Use the Git 1.x.x default to avoid errors on machines with old Git
 	# installations. To use `simple` instead, add this to your `~/.extra` file:
 	# `git config --global push.default simple`. See http://git.io/mMah-w.
-	default = matching
+	default = current
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 
@@ -178,3 +183,12 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+[credential]
+	helper = osxkeychain
+[user]
+	email = jelle@jellekralt.nl
+	name = Jelle Kralt
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
