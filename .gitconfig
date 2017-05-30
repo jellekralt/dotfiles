@@ -65,9 +65,6 @@
 	# a.k.a. 'set upstream'
 	su = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
 
-	# Config git user as KPN
-	kpn = "!git config user.email 'jelle.kralt@kpn.com'"
-
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
